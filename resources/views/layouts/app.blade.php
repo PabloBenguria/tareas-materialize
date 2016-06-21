@@ -76,11 +76,11 @@
     </div>
 
     @if(session()->has('success'))
-      <div class="content-alert">
+      <div class="content-alert animated fadeIn">
         <div class="container">
           <div class="col s12 l4">
             <div class="alert-success">
-              <button type="button" class="close"><i class="material-icons">clear</i></button>
+              <a href="#!" class="close"><i class="material-icons left">clear</i></a>
               {{ session('success') }}
             </div>
           </div>
@@ -89,10 +89,14 @@
     @endif
 
     @if(session()->has('error'))
-      <div class="container">
-        <div class="alert alert-danger alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          {{ session('error') }}
+      <div class="content-alert animated fadeIn">
+        <div class="container">
+          <div class="col s12 l4">
+            <div class="alert-error">
+              <a href="#!" class="close"><i class="material-icons left">clear</i></a>
+              {{ session('error') }}
+            </div>
+          </div>
         </div>
       </div>
     @endif
@@ -111,10 +115,14 @@
     @endif
 
     @if(session()->has('info'))
-      <div class="container">
-        <div class="alert alert-info alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          {{ session('info') }}
+      <div class="content-alert animated fadeIn">
+        <div class="container">
+          <div class="col s12 l4">
+            <div class="alert-info">
+              <a href="#!" class="close"><i class="material-icons left">clear</i></a>
+              {{ session('info') }}
+            </div>
+          </div>
         </div>
       </div>
     @endif

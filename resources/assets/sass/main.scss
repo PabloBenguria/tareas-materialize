@@ -13,6 +13,10 @@ main {
   flex: 1 0 auto;
 }
 
+.btn-user{
+  text-transform: capitalize;
+}
+
 #app-layout{
   nav{
     background-color: $primary-color;
@@ -26,10 +30,47 @@ main {
         opacity: 0.7;
       }
     }
+    .dropdown-content{
+      li{
+        a{
+          color: $primary-color;
+        }
+      }
+    }
+    .side-nav{
+      a{
+        color: $primary-color;
+      }
+    }
   }
-  .alert-success{
-    background-color: $accent-color;
+  .content-alert{
     margin: 10px 0;
+    .alert-success{
+      background-color: $accent-color;
+      color: $primary-color-text;
+      border-radius: 4px;
+      width: 320px;
+      height: 60px;
+      padding: 10px;
+    }
+    .alert-error{
+      background-color: $error-color;
+      color: $primary-color-text;
+      border-radius: 4px;
+      width: 320px;
+      height: 60px;
+      padding: 10px;
+    }
+    .alert-info{
+      background-color: $primary-color-light;
+      border-radius: 4px;
+      width: 320px;
+      height: 60px;
+      padding: 10px;
+    }
+    .close{
+      color: $primary-text-color;
+    }
   }
 }
 
@@ -42,6 +83,15 @@ main {
   }
   td{
     border-radius: 0;
+  }
+  .collapsible-header{
+    background-color: transparent;
+    border: none;
+  }
+  .collapsible{
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 

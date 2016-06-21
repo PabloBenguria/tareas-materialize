@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Tarea;
 use App\User;
+use App\TareaUser;
 use Auth;
 use Hash;
 use App;
@@ -32,23 +33,25 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-      $tareas = Tarea::filterType($request->get('estado'));
+      $filtro = Tarea::filterType($request->get('estado'));
 
-        //$tareas = Tarea::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10);
-        //$tareas = User::find(Auth::user()->id)->tareas()->orderBy('created_at', 'desc')->paginate(10);
-        return view('tareas', ['tareas' => $tareas]);
+      $tareas = User::find(Auth::user()->id)->tareas()->orderBy('created_at', 'desc')->paginate(10);
+
+      //$tareas = Tarea::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10);
+      //$tareas = User::find(Auth::user()->id)->tareas()->orderBy('created_at', 'desc')->paginate(10);
+      return view('tareas', ['tareas' => $tareas]);
     }
 
     public function postCrear(Request $request){
         $this->validate($request, [
           'texto' => 'required|max:255'
         ]);
-        $tarea = new Tarea;
-        $tarea->texto = $request->texto;
-        $tarea->user_id = Auth::user()->id; //$request->user()->id
-        $tarea->save();
+
+        $tarea = new Tarea(['texto' => $request->texto, 'user_id' => Auth::user()->id]);
+        $usuario = User::find(Auth::user()->id);
+        $usuario->tareas()->save($tarea);
         $message = trans('messages.tarea_creada');
-        $request->session()->flash('info', $message);
+        session()->flash('success', $message);
         return redirect('tareas');
     }
 
@@ -110,4 +113,22 @@ class HomeController extends Controller
         }
         return redirect('config');
     }
+
+    public function postCompartir(Request $request){
+      $usuario = User::where('email', $request->email)->firstOrFail();
+
+      $count = TareaUser::where(['tarea_id' => $request->tarea_id, 'user_id' => $usuario->id])->count();
+
+      if($count === 0){
+          $tarea_user = new TareaUser;
+          $tarea_user->user_id = $usuario->id;
+          $tarea_user->tarea_id = $request->tarea_id;
+          $tarea_user->save();
+          session()->flash('success', 'Tarea compartida con el usuario ' . $request->email);
+      }else{
+          session()->flash('error', 'No se puede compartir la tarea con el usuario ' . $request->email);
+      }
+
+      return redirect('tareas');
+  }
 }

@@ -8,7 +8,7 @@ use Auth;
 class Tarea extends Model
 {
   protected $table = 'tareas';
-  protected $fillable = ['texto', 'autor_id'];
+  protected $fillable = ['texto', 'user_id'];
 
   public function users(){
     return $this->belongsToMany('App\User');

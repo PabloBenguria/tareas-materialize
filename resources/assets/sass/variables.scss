@@ -18,6 +18,8 @@ $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
 
+$error-color:          #e53935;
+
 $size__base_font : 14;
 
 @function em($target, $context: $size__base_font) {

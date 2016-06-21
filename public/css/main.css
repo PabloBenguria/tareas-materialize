@@ -47,6 +47,9 @@ body {
 main {
   flex: 1 0 auto; }
 
+.btn-user {
+  text-transform: capitalize; }
+
 #app-layout nav {
   background-color: #3F51B5; }
   #app-layout nav .btn-user {
@@ -56,9 +59,34 @@ main {
     #app-layout nav .nav-logo:hover {
       background-color: #4CAF50;
       opacity: 0.7; }
-#app-layout .alert-success {
-  background-color: #4CAF50;
+  #app-layout nav .dropdown-content li a {
+    color: #3F51B5; }
+  #app-layout nav .side-nav a {
+    color: #3F51B5; }
+#app-layout .content-alert {
   margin: 10px 0; }
+  #app-layout .content-alert .alert-success {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    border-radius: 4px;
+    width: 320px;
+    height: 60px;
+    padding: 10px; }
+  #app-layout .content-alert .alert-error {
+    background-color: #e53935;
+    color: #FFFFFF;
+    border-radius: 4px;
+    width: 320px;
+    height: 60px;
+    padding: 10px; }
+  #app-layout .content-alert .alert-info {
+    background-color: #C5CAE9;
+    border-radius: 4px;
+    width: 320px;
+    height: 60px;
+    padding: 10px; }
+  #app-layout .content-alert .close {
+    color: #212121; }
 
 .content-tareas .btn-accent-color {
   background-color: #4CAF50; }
@@ -66,6 +94,13 @@ main {
   background-color: #C5CAE9; }
 .content-tareas td {
   border-radius: 0; }
+.content-tareas .collapsible-header {
+  background-color: transparent;
+  border: none; }
+.content-tareas .collapsible {
+  border: none;
+  background-color: transparent;
+  box-shadow: none; }
 
 .content-welcome h1 {
   color: #4CAF50; }

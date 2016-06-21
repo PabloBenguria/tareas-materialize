@@ -2,6 +2,12 @@ $(function() {
 
   $(".button-collapse").sideNav();
 
+  $('.tooltipped').tooltip({delay: 50});
+
+  $('.collapsible').collapsible({
+     accordion : false
+   });
+
   $('.dropdown-button').dropdown({
     inDuration: 300,
     outDuration: 225,
@@ -24,7 +30,7 @@ $(function() {
   $('select').material_select();
 
   $('.close').on('click', function(){
-    $('.content-alert').css('display', 'none');
+    $('.content-alert').addClass('hide');
   });
 
 });

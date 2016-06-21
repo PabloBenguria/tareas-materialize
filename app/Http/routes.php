@@ -25,3 +25,4 @@ Route::get('config', 'HomeController@getConfig');
 
 Route::post('crear', 'HomeController@postCrear');
 Route::post('cambiar-pass', 'HomeController@postCambiarPass');
+Route::post('compartir', 'HomeController@postCompartir');
