@@ -1,0 +1,81 @@
+/*
+$primary-color-dark:   #0288D1;
+$primary-color:        #03A9F4;
+$primary-color-light:  #B3E5FC;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF9800;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+*/
+@font-face {
+  font-family: 'roboto_condensedbold';
+  src: url("../fonts/roboto-bold-condensed/RobotoCondensed-Bold-webfont.eot");
+  src: url("../fonts/roboto-bold-condensed/RobotoCondensed-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold-condensed/RobotoCondensed-Bold-webfont.woff") format("woff"), url("../fonts/roboto-bold-condensed/RobotoCondensed-Bold-webfont.ttf") format("truetype"), url("../fonts/roboto-bold-condensed/RobotoCondensed-Bold-webfont.svg#roboto_condensedbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotobold';
+  src: url("../fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot");
+  src: url("../fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff") format("woff"), url("../fonts/roboto_bold_macroman/Roboto-Bold-webfont.ttf") format("truetype"), url("../fonts/roboto_bold_macroman/Roboto-Bold-webfont.svg#robotobold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotolight';
+  src: url("../fonts/roboto_light_macroman/Roboto-Light-webfont.eot");
+  src: url("../fonts/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_light_macroman/Roboto-Light-webfont.woff") format("woff"), url("../fonts/roboto_light_macroman/Roboto-Light-webfont.ttf") format("truetype"), url("../fonts/roboto_light_macroman/Roboto-Light-webfont.svg#robotolight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotoregular';
+  src: url("../fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot");
+  src: url("../fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/roboto_regular_macroman/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotomedium';
+  src: url("../fonts/roboto_medium_macroman/Roboto-Medium-webfont.eot");
+  src: url("../fonts/roboto_medium_macroman/Roboto-Medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff") format("woff"), url("../fonts/roboto_medium_macroman/Roboto-Medium-webfont.ttf") format("truetype"), url("../fonts/roboto_medium_macroman/Roboto-Medium-webfont.svg#robotomedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  color: #212121; }
+
+main {
+  flex: 1 0 auto; }
+
+#app-layout nav {
+  background-color: #3F51B5; }
+  #app-layout nav .btn-user {
+    text-transform: capitalize; }
+  #app-layout nav .nav-logo {
+    background-color: #4CAF50; }
+    #app-layout nav .nav-logo:hover {
+      background-color: #4CAF50;
+      opacity: 0.7; }
+#app-layout .alert-success {
+  background-color: #4CAF50;
+  margin: 10px 0; }
+
+.content-tareas .btn-accent-color {
+  background-color: #4CAF50; }
+.content-tareas .tr-color-light {
+  background-color: #C5CAE9; }
+.content-tareas td {
+  border-radius: 0; }
+
+.content-welcome h1 {
+  color: #4CAF50; }
+.content-welcome .btn-large {
+  background-color: #4CAF50; }
+
+.section-welcome .icon-block h2 {
+  color: #3F51B5; }
+
+footer.page-footer {
+  background-color: #3F51B5; }
+
+/*# sourceMappingURL=main.css.map */
